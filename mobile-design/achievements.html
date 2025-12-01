@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ScenARy - Achievements</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/mobile-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .list-item {
+            display: flex;
+            align-items: center;
+            padding: 1rem;
+            border-bottom: 1px solid var(--border-light);
+            color: #fff;
+            text-decoration: none;
+        }
+
+        .list-item:last-child {
+            border-bottom: none;
+        }
+
+        .list-icon {
+            width: 48px;
+            height: 48px;
+            border-radius: 50%;
+            background: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1rem;
+            border: 2px solid #444;
+            flex-shrink: 0;
+        }
+
+        .list-icon i {
+            color: #fff;
+            font-size: 1.2rem;
+        }
+
+        .list-icon.locked {
+            opacity: 0.5;
+            border-color: #333;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mobile-container content-padding">
+        <div style="display: flex; align-items: center; margin-bottom: 2rem;">
+            <button class="btn-icon-back" onclick="window.history.back()" style="position: static; margin-right: 1rem;">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <h2 style="margin: 0; font-size: 1.5rem;">Achievements</h2>
+        </div>
+
+        <div class="glass-card" style="padding: 0; overflow: hidden;">
+            <div class="list-item">
+                <div class="list-icon" style="background: var(--primary-gold); border-color: var(--primary-gold);">
+                    <i class="fa-solid fa-star" style="color: #000;"></i>
+                </div>
+                <div>
+                    <div style="font-weight: 600; font-size: 1rem;">Welcome!</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Opened this app for the first time!</div>
+                </div>
+            </div>
+
+            <div class="list-item">
+                <div class="list-icon" style="background: var(--primary-gold); border-color: var(--primary-gold);">
+                    <i class="fa-solid fa-star" style="color: #000;"></i>
+                </div>
+                <div>
+                    <div style="font-weight: 600; font-size: 1rem;">Academician</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Finish your first quiz!</div>
+                </div>
+            </div>
+
+            <div class="list-item">
+                <div class="list-icon" style="background: var(--primary-gold); border-color: var(--primary-gold);">
+                    <i class="fa-solid fa-star" style="color: #000;"></i>
+                </div>
+                <div>
+                    <div style="font-weight: 600; font-size: 1rem;">Explorer</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Visit your first POI!</div>
+                </div>
+            </div>
+
+            <div class="list-item">
+                <div class="list-icon locked">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div>
+                    <div style="font-weight: 600; font-size: 1rem; color: var(--text-muted);">Time Traveler</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Visit 5 POIs</div>
+                </div>
+            </div>
+
+            <div class="list-item">
+                <div class="list-icon locked">
+                    <i class="fa-solid fa-star"></i>
+                </div>
+                <div>
+                    <div style="font-weight: 600; font-size: 1rem; color: var(--text-muted);">Ace</div>
+                    <div style="font-size: 0.8rem; color: var(--text-muted);">Finish 5 quizzes</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

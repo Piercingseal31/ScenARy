@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScenARy - Content Details</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div style="margin-bottom: 3rem; padding-left: 0.5rem;">
+                <div
+                    style="background: #C19A4B; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-user-shield" style="color: #000;"></i>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <h3 style="font-size: 1.2rem;">Admin</h3>
+                    <i class="fa-solid fa-arrow-right-from-bracket"
+                        style="font-size: 0.8rem; color: #666; cursor: pointer;"
+                        onclick="window.location.href='../auth/login.html'"></i>
+                </div>
+            </div>
+            <nav>
+                <a href="dashboard.html" class="nav-item">
+                    <i class="fa-solid fa-chart-pie"></i> Dashboard
+                </a>
+                <a href="content-management.html" class="nav-item active">
+                    <i class="fa-solid fa-layer-group"></i> Content Management
+                </a>
+                <a href="user-management.html" class="nav-item">
+                    <i class="fa-solid fa-users"></i> User Management
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="admin-header">
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <a href="content-management.html" style="color: var(--color-accent-gold); font-size: 1.5rem;"><i
+                            class="fa-solid fa-arrow-left"></i></a>
+                    <h2>Tour Details</h2>
+                </div>
+            </div>
+
+            <div class="glass-card" style="display: grid; grid-template-columns: 300px 1fr; gap: 2rem;">
+                <!-- Left Column: Image & Actions -->
+                <div>
+                    <div
+                        style="width: 100%; height: 200px; background: #222; border-radius: 8px; border: 1px solid var(--color-glass-border); display: flex; align-items: center; justify-content: center; margin-bottom: 1.5rem;">
+                        <i class="fa-regular fa-image" style="font-size: 3rem; color: #666;"></i>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; gap: 0.8rem;">
+                        <button class="btn-gold" style="width: 100%; text-align: center;"><i class="fa-solid fa-pen"
+                                style="margin-right: 0.5rem;"></i> Edit Tour</button>
+                        <button class="btn-outline" style="width: 100%; text-align: center;"><i
+                                class="fa-solid fa-clipboard-question" style="margin-right: 0.5rem;"></i> Quiz</button>
+                        <button class="btn-outline" style="width: 100%; text-align: center;"><i
+                                class="fa-solid fa-landmark" style="margin-right: 0.5rem;"></i> History</button>
+                        <button class="btn-outline" style="width: 100%; text-align: center;"><i
+                                class="fa-regular fa-lightbulb" style="margin-right: 0.5rem;"></i> Facts</button>
+                    </div>
+                </div>
+
+                <!-- Right Column: Info -->
+                <div>
+                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; margin-bottom: 1.5rem;">
+                        <div>
+                            <label
+                                style="color: #888; font-size: 0.8rem; display: block; margin-bottom: 0.3rem;">Title</label>
+                            <div style="color: #fff; font-weight: 600;">Basilica Sto. Niño de Cebu</div>
+                        </div>
+                        <div>
+                            <label
+                                style="color: #888; font-size: 0.8rem; display: block; margin-bottom: 0.3rem;">Location</label>
+                            <div style="color: #fff; font-weight: 600;">Pilgrim's Center, Osmeña Blvd, Cebu City</div>
+                        </div>
+                        <div>
+                            <label
+                                style="color: #888; font-size: 0.8rem; display: block; margin-bottom: 0.3rem;">Institute</label>
+                            <div style="color: #fff; font-weight: 600;">The Augustinian Province of Sto. Niño</div>
+                        </div>
+                        <div>
+                            <label
+                                style="color: #888; font-size: 0.8rem; display: block; margin-bottom: 0.3rem;">Status</label>
+                            <div style="color: #4ade80; font-weight: 600;"><i class="fa-solid fa-check"></i> Published
+                            </div>
+                        </div>
+                    </div>
+
+                    <div style="margin-bottom: 1.5rem;">
+                        <label
+                            style="color: #888; font-size: 0.8rem; display: block; margin-bottom: 0.3rem;">Description</label>
+                        <div
+                            style="background: rgba(255,255,255,0.05); padding: 1rem; border-radius: 8px; color: #ccc; line-height: 1.6; font-size: 0.95rem;">
+                            The Basilica Sto. Niño de Cebu Virtual Tour offers an interactive 3D experience of Cebu's
+                            oldest church. Explore its sacred halls, museum artifacts, and historic chapels while
+                            learning about the miraculous Sto. Niño image and the site's deep cultural significance.
+                        </div>
+                    </div>
+
+                    <div>
+                        <label
+                            style="color: #888; font-size: 0.8rem; display: block; margin-bottom: 0.3rem;">Asset</label>
+                        <div
+                            style="background: rgba(230, 184, 0, 0.1); padding: 0.8rem; border-radius: 8px; color: var(--color-accent-gold); display: flex; align-items: center; gap: 0.5rem; border: 1px solid rgba(230, 184, 0, 0.3);">
+                            <i class="fa-solid fa-paperclip"></i> basilica_sto_nino_model.glb
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

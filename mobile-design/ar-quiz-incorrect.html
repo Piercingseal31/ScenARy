@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ScenARy - Quiz Incorrect</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/mobile-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .ar-modal-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            z-index: 50;
+            pointer-events: auto;
+        }
+
+        .result-card {
+            width: 100%;
+            max-width: 340px;
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid var(--primary-gold);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 36px;
+            height: 36px;
+            background: var(--bg-dark);
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="camera-view">
+        <!-- Realistic Camera Feed Background -->
+        <div class="camera-placeholder" style="background: url('assets/img/ar-bg.png') center/cover no-repeat;">
+            <div style="width: 100%; height: 100%; background: rgba(0,0,0,0.3);"></div>
+        </div>
+
+        <div class="ar-modal-container animate-fade-in">
+            <div class="result-card">
+                <button class="close-btn" onclick="window.history.back()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--primary-gold);">The Basilica Minore
+                    del Santo Niño</h3>
+                <div
+                    style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 1.5rem; letter-spacing: 1px;">
+                    QUIZ RESULT</div>
+
+                <div style="text-align: center; margin-bottom: 1.5rem;">
+                    <div
+                        style="width: 60px; height: 60px; background: rgba(239, 68, 68, 0.1); border: 1px solid #ef4444; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem auto;">
+                        <i class="fa-solid fa-xmark" style="font-size: 1.8rem; color: #ef4444;"></i>
+                    </div>
+                    <h2 style="font-family: 'Playfair Display', serif; color: #ef4444; margin-bottom: 0.5rem;">Incorrect
+                    </h2>
+                    <p style="color: #ccc; font-size: 0.95rem; line-height: 1.5;">
+                        Not quite. The correct answer is Yes. The Sinulog Festival is held every January in honor of the
+                        Santo Niño.
+                    </p>
+                </div>
+
+                <div style="text-align: center;">
+                    <button class="btn-primary" style="width: 100%;" onclick="window.location.href='ar-quiz.html'">
+                        Try Again <i class="fa-solid fa-rotate-right" style="margin-left: 0.5rem;"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

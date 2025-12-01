@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ScenARy - AR View</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/mobile-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .ar-object-container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 200px;
+            height: 300px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            pointer-events: auto;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .ar-object-glow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(193, 154, 75, 0.4) 0%, transparent 70%);
+            z-index: 1;
+        }
+
+        .ar-3d-model {
+            font-size: 8rem;
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0 0 20px rgba(193, 154, 75, 0.8), 0 0 40px rgba(193, 154, 75, 0.4);
+            z-index: 2;
+            filter: drop-shadow(0 10px 10px rgba(0, 0, 0, 0.5));
+        }
+
+        @keyframes float {
+            0% {
+                transform: translate(-50%, -50%) translateY(0px);
+            }
+
+            50% {
+                transform: translate(-50%, -50%) translateY(-15px);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) translateY(0px);
+            }
+        }
+
+        .interaction-hint {
+            margin-top: 1rem;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            color: #fff;
+            font-size: 0.8rem;
+            z-index: 2;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(4px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="camera-view">
+        <!-- Realistic Camera Feed Background -->
+        <div style="width: 100%; height: 100%; background: url('assets/img/ar-bg.png') center/cover no-repeat;">
+            <div style="width: 100%; height: 100%; background: rgba(0,0,0,0.3);"></div> <!-- Overlay for contrast -->
+        </div>
+
+        <!-- AR Overlays -->
+        <div class="ar-overlay">
+            <!-- Back Button -->
+            <button class="btn-icon-back" onclick="window.history.back()">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+
+            <!-- Compass / Header -->
+            <div style="position: absolute; top: 2rem; width: 100%; text-align: center; pointer-events: none;">
+                <div
+                    style="background: rgba(0,0,0,0.5); display: inline-block; padding: 0.5rem 1rem; border-radius: 20px; backdrop-filter: blur(4px); border: 1px solid rgba(255,255,255,0.1);">
+                    <span style="color: var(--primary-gold); font-weight: 600;">NE</span> 45°
+                </div>
+            </div>
+
+            <!-- Central AR Object (The "Cause" - Basilica) -->
+            <div class="ar-object-container" onclick="window.location.href='ar-menu.html'">
+                <div class="ar-object-glow"></div>
+                <!-- Using fa-church to represent the Basilica -->
+                <i class="fa-solid fa-church ar-3d-model"></i>
+                <div class="interaction-hint">
+                    <i class="fa-solid fa-hand-pointer"></i> Tap to Interact
+                </div>
+            </div>
+
+            <!-- Removed the Magellan's Cross popup as requested -->
+        </div>
+
+        <!-- AR Controls -->
+        <div class="ar-controls">
+            <button class="ar-btn" onclick="window.location.href='ar-menu.html'">
+                <i class="fa-solid fa-layer-group"></i>
+            </button>
+            <button class="ar-btn"
+                style="width: 80px; height: 80px; background: rgba(255,255,255,0.9); color: #000; border: 4px solid rgba(255,255,255,0.5);">
+                <i class="fa-solid fa-camera"></i>
+            </button>
+            <button class="ar-btn" onclick="window.location.href='details.html'">
+                <i class="fa-solid fa-circle-info"></i>
+            </button>
+        </div>
+    </div>
+</body>
+
+</html>

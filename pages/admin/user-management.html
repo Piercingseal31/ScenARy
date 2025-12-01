@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScenARy - User Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div style="margin-bottom: 3rem; padding-left: 0.5rem;">
+                <div
+                    style="background: #C19A4B; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-user-shield" style="color: #000;"></i>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <h3 style="font-size: 1.2rem;">Admin</h3>
+                    <i class="fa-solid fa-arrow-right-from-bracket"
+                        style="font-size: 0.8rem; color: #666; cursor: pointer;"
+                        onclick="window.location.href='login.html'"></i>
+                </div>
+            </div>
+            <nav>
+                <a href="dashboard.html" class="nav-item">
+                    <i class="fa-solid fa-chart-pie"></i> Dashboard
+                </a>
+                <a href="content-management.html" class="nav-item">
+                    <i class="fa-solid fa-layer-group"></i> Content Management
+                </a>
+                <a href="user-management.html" class="nav-item active">
+                    <i class="fa-solid fa-users"></i> User Management
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="admin-header">
+                <h2>User Management</h2>
+            </div>
+
+            <div style="display: flex; gap: 1rem; margin-bottom: 2rem;">
+                <button class="tab-btn active">MANAGE USER</button>
+                <button class="tab-btn" onclick="window.location.href='manage-institution.html'">MANAGE
+                    INSTITUTION</button>
+            </div>
+
+            <div style="margin-bottom: 2rem;">
+                <input type="text" placeholder="Search users..." class="search-bar">
+            </div>
+
+            <div class="admin-table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>First Name</th>
+                            <th>Last Name</th>
+                            <th>Email</th>
+                            <th>Role</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>John</td>
+                            <td>Doe</td>
+                            <td>johndoe@gmail.com</td>
+                            <td>User</td>
+                            <td>
+                                <button class="btn-table-action"
+                                    onclick="window.location.href='user-details.html'">View</button>
+                                <button class="btn-table-action" style="border-color: #ff4d4d; color: #ff4d4d;"
+                                    onclick="openDeleteModal('John Doe')">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+    <!-- Delete Confirmation Modal -->
+    <div class="modal-overlay" id="deleteModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div
+                    style="width: 60px; height: 60px; background: rgba(255, 77, 77, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem; border: 1px solid rgba(255, 77, 77, 0.3);">
+                    <i class="fa-solid fa-triangle-exclamation" style="color: #ff4d4d; font-size: 1.5rem;"></i>
+                </div>
+                <h3 style="color: #fff; font-family: var(--font-display); font-size: 1.5rem; margin-bottom: 0.5rem;">
+                    Warning!</h3>
+                <p style="color: var(--color-text-muted); font-size: 0.95rem; line-height: 1.6;">
+                    Are you sure you want to delete user: <span id="deleteTargetName"
+                        style="color: #fff; font-weight: 600;"></span>?
+                </p>
+            </div>
+            <div class="modal-actions" style="justify-content: center; gap: 1rem;">
+                <button class="btn-outline" onclick="closeDeleteModal()"
+                    style="border-color: rgba(255, 255, 255, 0.2); color: var(--color-text-muted);">Cancel</button>
+                <button class="btn-primary" style="background: #ff4d4d; color: #fff; border: none;"
+                    onclick="confirmDelete()">Delete</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function openDeleteModal(name) {
+            document.getElementById('deleteTargetName').textContent = name;
+            document.getElementById('deleteModal').classList.add('active');
+        }
+
+        function closeDeleteModal() {
+            document.getElementById('deleteModal').classList.remove('active');
+        }
+
+        function confirmDelete() {
+            // In a real app, this would make an API call
+            closeDeleteModal();
+            // Optional: Show success message or reload
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('deleteModal').addEventListener('click', function (e) {
+            if (e.target === this) {
+                closeDeleteModal();
+            }
+        });
+    </script>
+</body>
+
+</html>

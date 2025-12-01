@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ScenARy - AR Fact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/mobile-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .ar-modal-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            z-index: 50;
+            pointer-events: auto;
+        }
+
+        .fact-card {
+            width: 100%;
+            max-width: 340px;
+            background: rgba(20, 20, 20, 0.95);
+            border: 1px solid var(--primary-gold);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            position: relative;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 36px;
+            height: 36px;
+            background: var(--bg-dark);
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            z-index: 10;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="camera-view">
+        <!-- Realistic Camera Feed Background -->
+        <div class="camera-placeholder" style="background: url('assets/img/ar-bg.png') center/cover no-repeat;">
+            <div style="width: 100%; height: 100%; background: rgba(0,0,0,0.3);"></div>
+        </div>
+
+        <div class="ar-modal-container animate-fade-in">
+            <div class="fact-card">
+                <button class="close-btn" onclick="window.history.back()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <h3 style="font-size: 1.1rem; margin-bottom: 0.5rem; color: var(--primary-gold);">The Basilica Minore
+                    del Santo Niño</h3>
+                <div
+                    style="font-size: 0.8rem; font-weight: 600; color: var(--text-muted); margin-bottom: 1.5rem; letter-spacing: 1px;">
+                    DID YOU KNOW?</div>
+
+                <div
+                    style="background: rgba(193, 154, 75, 0.1); border-left: 3px solid var(--primary-gold); padding: 1rem; border-radius: 0 8px 8px 0;">
+                    <p style="color: #fff; font-size: 1rem; line-height: 1.6; font-style: italic;">
+                        "This Basilica was built on the very spot where the miraculous Santo Niño image—a statue of the
+                        Child Jesus dating from Magellan's time—was found, remarkably unscathed, after a fire in 1565."
+                    </p>
+                </div>
+
+                <div style="text-align: center; margin-top: 1.5rem;">
+                    <button class="btn-text" style="color: var(--text-muted); font-size: 0.9rem;"
+                        onclick="window.history.back()">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

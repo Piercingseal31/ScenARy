@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ScenARy - Login</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/mobile-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="mobile-container content-padding">
+        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+            <div style="text-align: center; margin-bottom: 2rem;">
+                <div class="splash-logo" style="width: 80px; height: 80px; font-size: 2rem; margin: 0 auto 1rem;">
+                    <i class="fa-solid fa-landmark"></i>
+                </div>
+                <h2>Welcome Back</h2>
+                <p>Sign in to continue your journey</p>
+            </div>
+
+            <div class="glass-card animate-fade-in">
+                <div style="margin-bottom: 1rem;">
+                    <label
+                        style="display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem;">Username</label>
+                    <input type="text" class="glass-input" placeholder="Enter your username">
+                </div>
+
+                <div style="margin-bottom: 1.5rem; position: relative;">
+                    <label
+                        style="display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem;">Password</label>
+                    <input type="password" class="glass-input" placeholder="Enter your password">
+                    <i class="fa-solid fa-eye-slash"
+                        style="position: absolute; right: 1rem; top: 2.5rem; color: var(--text-muted);"></i>
+                </div>
+
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                    <label
+                        style="display: flex; align-items: center; gap: 0.5rem; color: var(--text-muted); font-size: 0.85rem;">
+                        <input type="checkbox" style="accent-color: var(--primary-gold);"> Remember Me
+                    </label>
+                    <a href="forgot-password.html" class="btn-text" style="font-size: 0.85rem;">Forgot Password?</a>
+                </div>
+
+                <button class="btn-primary" onclick="window.location.href='map.html'">Sign In</button>
+            </div>
+
+            <div style="text-align: center; margin-top: 1rem;">
+                <p>Don't have an account? <a href="register.html" class="btn-text">Sign Up</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
