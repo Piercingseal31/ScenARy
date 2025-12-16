@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ScenARy - AR Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/mobile-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .ar-modal-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            z-index: 50;
+            pointer-events: auto;
+        }
+
+        .quiz-card {
+            width: 100%;
+            max-width: 320px;
+            background: #1a1a1a;
+            border: 1px solid var(--primary-gold);
+            border-radius: 24px;
+            padding: 2rem 1.5rem;
+            position: relative;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.8);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 40px;
+            height: 40px;
+            background: #1a1a1a;
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            z-index: 10;
+            transition: transform 0.2s;
+        }
+
+        .close-btn:active {
+            transform: scale(0.9);
+        }
+
+        .quiz-title {
+            font-family: 'Playfair Display', serif;
+            color: var(--primary-gold);
+            font-size: 1.4rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+        }
+
+        .quiz-subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 1.5rem;
+        }
+
+        .quiz-question {
+            font-family: 'Inter', sans-serif;
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 500;
+            line-height: 1.5;
+            margin-bottom: 2rem;
+        }
+
+        .quiz-option {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem 1.2rem;
+            margin-bottom: 1rem;
+            background: #2a2a2a;
+            border: 1px solid #333;
+            border-radius: 16px;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .quiz-option:active {
+            background: #333;
+            transform: scale(0.98);
+        }
+
+        .quiz-option span {
+            font-weight: 600;
+            color: #fff;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .checkbox-circle {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            border: 2px solid #666;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+
+        /* Selected State Style (for visual feedback if needed, though we navigate immediately) */
+        .quiz-option.selected {
+            border-color: var(--primary-gold);
+        }
+
+        .quiz-option.selected .checkbox-circle {
+            background: transparent;
+            border-color: #fff;
+            color: #fff;
+        }
+
+        .btn-next {
+            width: 100%;
+            background: var(--primary-gold);
+            color: #1a1a1a;
+            border: none;
+            padding: 1rem;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            margin-top: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(193, 154, 75, 0.3);
+        }
+
+        .btn-next:active {
+            transform: scale(0.98);
+            box-shadow: 0 2px 8px rgba(193, 154, 75, 0.2);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="camera-view">
+        <!-- Background -->
+        <div class="camera-placeholder" style="background: url('assets/img/ar-bg.png') center/cover no-repeat;">
+            <div style="width: 100%; height: 100%; background: rgba(0,0,0,0.3);"></div>
+        </div>
+
+        <div class="ar-modal-container animate-fade-in">
+            <div class="quiz-card">
+                <button class="close-btn" onclick="window.history.back()">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+
+                <h2 class="quiz-title">The Basilica Minore del Santo Niño</h2>
+                <div class="quiz-subtitle">QUIZ TIME</div>
+
+                <p class="quiz-question">
+                    Are there any festivals in honor of the Sto. Niño?
+                </p>
+
+                <div class="quiz-option" onclick="window.location.href='ar-quiz-correct.html'">
+                    <span>YES</span>
+                    <div class="checkbox-circle"><i class="fa-solid fa-check"
+                            style="font-size: 0.8rem; opacity: 0;"></i></div>
+                </div>
+
+                <div class="quiz-option" onclick="window.location.href='ar-quiz-incorrect.html'">
+                    <span>NO</span>
+                    <div class="checkbox-circle"></div>
+                </div>
+
+                <button class="btn-next" onclick="window.location.href='ar-quiz-correct.html'">
+                    NEXT <i class="fa-solid fa-arrow-right"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Simple script to show checkmark on click before navigating (optional polish)
+        document.querySelectorAll('.quiz-option').forEach(option => {
+            option.addEventListener('click', function (e) {
+                // Prevent immediate navigation to show effect
+                e.preventDefault();
+                const href = this.getAttribute('onclick').match(/'([^']+)'/)[1];
+
+                // Reset others
+                document.querySelectorAll('.quiz-option').forEach(o => {
+                    o.style.borderColor = '#333';
+                    o.querySelector('.checkbox-circle').style.borderColor = '#666';
+                    const icon = o.querySelector('.fa-check');
+                    if (icon) icon.style.opacity = '0';
+                });
+
+                // Set active
+                this.style.borderColor = '#fff';
+                const circle = this.querySelector('.checkbox-circle');
+                circle.style.borderColor = '#fff';
+                const icon = this.querySelector('.fa-check');
+                if (icon) icon.style.opacity = '1';
+
+                // Navigate after short delay
+                setTimeout(() => {
+                    window.location.href = href;
+                }, 300);
+            });
+
+            // Remove the inline onclick to use the listener above
+            option.removeAttribute('onclick');
+            option.setAttribute('data-href', option.getAttribute('onclick'));
+        });
+    </script>
+</body>
+
+</html>

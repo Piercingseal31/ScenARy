@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScenARy - Content Management</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div style="margin-bottom: 3rem; padding-left: 0.5rem;">
+                <div
+                    style="background: #C19A4B; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-user-shield" style="color: #000;"></i>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <h3 style="font-size: 1.2rem;">Admin</h3>
+                    <i class="fa-solid fa-arrow-right-from-bracket"
+                        style="font-size: 0.8rem; color: #666; cursor: pointer;"
+                        onclick="window.location.href='../auth/login.html'"></i>
+                </div>
+            </div>
+            <nav>
+                <a href="dashboard.html" class="nav-item">
+                    <i class="fa-solid fa-chart-pie"></i> Dashboard
+                </a>
+                <a href="content-management.html" class="nav-item active">
+                    <i class="fa-solid fa-layer-group"></i> Content Management
+                </a>
+                <a href="user-management.html" class="nav-item">
+                    <i class="fa-solid fa-users"></i> User Management
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="admin-header">
+                <h2>Content Management</h2>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 2rem;">
+                <input type="text" placeholder="Search content..." class="search-bar" style="margin-bottom: 0;">
+                <button class="btn-primary"
+                    style="background-color: var(--color-accent-gold); color: #000; font-weight: 700;">ADD NEW
+                    TOUR</button>
+            </div>
+
+            <div class="admin-table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Institute</th>
+                            <th>Location</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Basilica Sto. Niño de Cebu</td>
+                            <td>The Augustinian Province...</td>
+                            <td>Pilgrim's Center, Osmeña Blvd...</td>
+                            <td>
+                                <button class="btn-table-action"
+                                    onclick="window.location.href='content-details.html'">View</button>
+                                <button class="btn-table-action"
+                                    onclick="window.location.href='content-analytics.html'">Metrics</button>
+                                <button class="btn-table-action">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Fort San Pedro</td>
+                            <td>The Augustinian Province...</td>
+                            <td>A. Pigafetta Street, Pier Area...</td>
+                            <td>
+                                <button class="btn-table-action"
+                                    onclick="window.location.href='content-details.html'">View</button>
+                                <button class="btn-table-action"
+                                    onclick="window.location.href='content-analytics.html'">Metrics</button>
+                                <button class="btn-table-action">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Magellan's Cross Pavilion</td>
+                            <td>Archdiocese of Cebu</td>
+                            <td>P. Burgos Street, Imus...</td>
+                            <td>
+                                <button class="btn-table-action"
+                                    onclick="window.location.href='content-details.html'">View</button>
+                                <button class="btn-table-action"
+                                    onclick="window.location.href='content-analytics.html'">Metrics</button>
+                                <button class="btn-table-action">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Casa Gorordo Museum</td>
+                            <td>Ramon Aboitiz Foundation...</td>
+                            <td>35 Lopez Jaena Street...</td>
+                            <td>
+                                <button class="btn-table-action"
+                                    onclick="window.location.href='content-details.html'">View</button>
+                                <button class="btn-table-action"
+                                    onclick="window.location.href='content-analytics.html'">Metrics</button>
+                                <button class="btn-table-action">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

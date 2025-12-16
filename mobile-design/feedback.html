@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ScenARy - Feedback</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/mobile-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .star-rating {
+            display: flex;
+            justify-content: center;
+            gap: 0.5rem;
+            margin: 1rem 0 2rem;
+        }
+
+        .star-rating i {
+            font-size: 2rem;
+            color: #444;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+
+        .star-rating i:hover,
+        .star-rating i.active {
+            color: var(--primary-gold);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mobile-container content-padding">
+        <div style="display: flex; align-items: center; margin-bottom: 2rem;">
+            <button class="btn-icon-back" onclick="window.history.back()" style="position: static; margin-right: 1rem;">
+                <i class="fa-solid fa-arrow-left"></i>
+            </button>
+            <h2 style="margin: 0; font-size: 1.5rem;">Give Feedback</h2>
+        </div>
+
+        <div class="glass-card">
+            <label style="display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem;">Select
+                Site</label>
+            <select class="glass-input" style="color: #fff; appearance: none;">
+                <option>The Basilica Minore del Santo Niño</option>
+                <option>Fort San Pedro</option>
+                <option>Magellan's Cross</option>
+            </select>
+
+            <div style="text-align: center; margin-top: 1.5rem;">
+                <p style="color: #fff; font-weight: 600;">Give us 5 stars</p>
+                <div class="star-rating">
+                    <i class="fa-solid fa-star active"></i>
+                    <i class="fa-solid fa-star active"></i>
+                    <i class="fa-solid fa-star active"></i>
+                    <i class="fa-solid fa-star active"></i>
+                    <i class="fa-regular fa-star"></i>
+                </div>
+            </div>
+
+            <label style="display: block; margin-bottom: 0.5rem; color: var(--text-muted); font-size: 0.9rem;">Tell us
+                more</label>
+            <textarea class="glass-input" rows="5" placeholder="Share your experience..."
+                style="resize: none;"></textarea>
+            <div
+                style="text-align: right; font-size: 0.8rem; color: var(--text-muted); margin-top: -0.5rem; margin-bottom: 1.5rem;">
+                50/50</div>
+
+            <button class="btn-primary" onclick="alert('Thank you for your feedback!')">Submit</button>
+        </div>
+    </div>
+</body>
+
+</html>

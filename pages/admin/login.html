@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScenARy - Admin Access</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-wrapper">
+            <!-- VIEW: ADMIN LOGIN -->
+            <div id="view-admin-login" class="auth-view glass-card active" style="display: block;">
+                <div class="logo-area">
+                    <div class="logo-icon"><i class="fa-solid fa-user-shield"></i></div>
+                    <h3>Admin Login</h3>
+                    <p style="color: var(--color-text-muted); font-size: 0.9rem;">ScenARy Administration Portal</p>
+                </div>
+
+                <form onsubmit="event.preventDefault(); window.location.href = 'dashboard.html';">
+                    <div class="form-group">
+                        <label>ADMIN EMAIL</label>
+                        <input type="email" class="form-control" placeholder="admin@scenary.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label>PASSWORD</label>
+                        <input type="password" class="form-control" placeholder="••••••••" required>
+                    </div>
+
+                    <button type="submit" class="btn-primary"
+                        style="width: 100%; margin-top: 2rem; background-color: var(--color-accent-gold); color: #000; font-weight: 700;">LOGIN</button>
+
+                    <div
+                        style="text-align: center; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 1.5rem;">
+                        <a href="../institute/login.html"
+                            style="color: var(--color-accent-gold); text-decoration: none; font-size: 0.9rem; font-weight: 600;">Back
+                            to Institute Login</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
