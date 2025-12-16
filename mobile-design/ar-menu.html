@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>ScenARy - AR Menu</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/mobile-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .ar-modal-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            /* Dimmed background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+            z-index: 50;
+            pointer-events: auto;
+        }
+
+        .menu-card {
+            width: 100%;
+            max-width: 340px;
+            background: rgba(20, 20, 20, 0.95);
+            /* Dark background */
+            border: 1px solid var(--primary-gold);
+            border-radius: 16px;
+            padding: 1.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+            position: relative;
+            backdrop-filter: blur(10px);
+        }
+
+        .menu-item {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 1rem;
+            margin-bottom: 0.5rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            color: #fff;
+            text-decoration: none;
+            transition: background 0.2s;
+            border: 1px solid transparent;
+        }
+
+        .menu-item:active {
+            background: rgba(193, 154, 75, 0.1);
+            border-color: var(--primary-gold);
+        }
+
+        .menu-item i.arrow {
+            color: var(--text-muted);
+        }
+
+        .close-btn {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 36px;
+            height: 36px;
+            background: var(--bg-dark);
+            border: 1px solid var(--primary-gold);
+            color: var(--primary-gold);
+            border-radius: 50%;
+            < !DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>ScenARy - AR Menu</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+
+            rel="stylesheet"><link rel="stylesheet" href="assets/css/mobile-style.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"><style>.ar-modal-container {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.6);
+                /* Dimmed background */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                padding: 2rem;
+                z-index: 50;
+                pointer-events: auto;
+            }
+
+            .menu-card {
+                width: 100%;
+                max-width: 340px;
+                background: rgba(20, 20, 20, 0.95);
+                /* Dark background */
+                border: 1px solid var(--primary-gold);
+                border-radius: 16px;
+                padding: 1.5rem;
+                box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+                position: relative;
+                backdrop-filter: blur(10px);
+            }
+
+            .menu-item {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                padding: 1rem;
+                margin-bottom: 0.5rem;
+                background: rgba(255, 255, 255, 0.05);
+                border-radius: 12px;
+                color: #fff;
+                text-decoration: none;
+                transition: background 0.2s;
+                border: 1px solid transparent;
+            }
+
+            .menu-item:active {
+                background: rgba(193, 154, 75, 0.1);
+                border-color: var(--primary-gold);
+            }
+
+            .menu-item i.arrow {
+                color: var(--text-muted);
+            }
+
+            .close-btn {
+                position: absolute;
+                top: -15px;
+                right: -15px;
+                width: 36px;
+                height: 36px;
+                background: var(--bg-dark);
+                border: 1px solid var(--primary-gold);
+                color: var(--primary-gold);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                cursor: pointer;
+                box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                z-index: 10;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="ar-modal-container">
+        <div class="menu-card">
+            <button class="close-btn">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <h3 style="font-size: 1.2rem; margin-bottom: 0.2rem; color: var(--primary-gold); padding-right: 1rem;">The
+                Basilica Minore del Santo Niño</h3>
+            <div style="height: 1px; background: var(--border-light); margin: 1rem 0;"></div>
+            <div class="menu-item">
+                <div style="display: flex; align-items: center; gap: 0.8rem;">
+                    <div
+                        style="width: 24px; height: 24px; background: var(--primary-gold); color: #000; display: flex; align-items: center; justify-content: center; border-radius: 4px;">
+                        <i class="fa-solid fa-check" style="font-size: 0.9rem;"></i>
+                    </div>
+                    <span style="font-weight: 500;">Favorite Site?</span>
+                </div>
+            </div>
+            <a href="ar-quiz.html" class="menu-item">
+                <span style="font-weight: 500;">Take Quiz</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <a href="ar-fact.html" class="menu-item">
+                <span style="font-weight: 500;">Fun Fact</span>
+                <i class="fa-solid fa-chevron-right arrow"></i>
+            </a>
+            <div style="margin-top: 1.5rem;">
+                <button class="btn-primary" style="padding: 0.8rem; font-size: 0.9rem;">
+                    <i class="fa-solid fa-download" style="margin-right: 0.5rem;"></i>Download Offline
+                </button>
+            </div>
+        </div>
+    </div>
+    <!-- Background UI (visible behind modal) -->
+    <div class="ar-overlay">
+        <!-- Simulated Camera Feed -->
+        <div class="camera-placeholder" style="background: url('assets/img/ar-bg.png') center/cover no-repeat;">
+            <div style="width: 100%; height: 100%; background: rgba(0,0,0,0.3);"></div>
+        </div>
+        <div style="position: absolute; top: 2rem; right: 1.5rem;">
+            <i class="fa-solid fa-circle-info" style="font-size: 1.5rem; color: #fff; opacity: 0.5;"></i>
+        </div>
+        <div style="position: absolute; bottom: 2rem; left: 1.5rem;">
+            <div
+                style="width: 50px; height: 50px; background: rgba(0,0,0,0.5); border-radius: 50%; display: flex; align-items: center; justify-content: center; border: 2px solid rgba(255,255,255,0.3);">
+                <i class="fa-solid fa-user" style="color: rgba(255,255,255,0.5);"></i>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
