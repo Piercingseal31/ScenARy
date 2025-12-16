@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScenARy - Content Analytics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div style="margin-bottom: 3rem; padding-left: 0.5rem;">
+                <div
+                    style="background: #C19A4B; width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 1rem;">
+                    <i class="fa-solid fa-user-shield" style="color: #000;"></i>
+                </div>
+                <div style="display: flex; align-items: center; gap: 1rem;">
+                    <h3 style="font-size: 1.2rem;">Admin</h3>
+                    <i class="fa-solid fa-arrow-right-from-bracket"
+                        style="font-size: 0.8rem; color: #666; cursor: pointer;"
+                        onclick="window.location.href='login.html'"></i>
+                </div>
+            </div>
+            <nav>
+                <a href="dashboard.html" class="nav-item">
+                    <i class="fa-solid fa-chart-pie"></i> Dashboard
+                </a>
+                <a href="content-management.html" class="nav-item active">
+                    <i class="fa-solid fa-layer-group"></i> Content Management
+                </a>
+                <a href="user-management.html" class="nav-item">
+                    <i class="fa-solid fa-users"></i> User Management
+                </a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Header with Back Button -->
+            <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem;">
+                <i class="fa-solid fa-arrow-left" style="font-size: 1.5rem; color: #fff; cursor: pointer;"
+                    onclick="window.location.href='content-management.html'"></i>
+                <h2 style="margin: 0; color: #fff; font-family: var(--font-display);">Content Management - Analytics
+                </h2>
+            </div>
+
+            <!-- Analytics Cards Grid -->
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 2rem; max-width: 1000px;">
+                <!-- Engagement Card -->
+                <div
+                    style="background: linear-gradient(135deg, #C19A4B 0%, #A67C3A 100%); border-radius: 16px; padding: 2.5rem; display: flex; align-items: center; gap: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                    <i class="fa-solid fa-handshake" style="font-size: 3rem; color: #000; opacity: 0.8;"></i>
+                    <div>
+                        <h3 style="font-size: 1rem; color: #000; margin: 0 0 0.5rem 0; font-weight: 600;">Engagement
+                        </h3>
+                        <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+                            <span
+                                style="font-size: 2.5rem; font-weight: 700; color: #000; font-family: var(--font-display);">85</span>
+                            <span style="font-size: 1.2rem; color: #000; opacity: 0.8;">↗5%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Historical Trend Card -->
+                <div
+                    style="background: linear-gradient(135deg, #C19A4B 0%, #A67C3A 100%); border-radius: 16px; padding: 2.5rem; display: flex; align-items: center; gap: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                    <i class="fa-solid fa-landmark" style="font-size: 3rem; color: #000; opacity: 0.8;"></i>
+                    <div>
+                        <h3 style="font-size: 1rem; color: #000; margin: 0 0 0.5rem 0; font-weight: 600;">Historical
+                            Trend</h3>
+                        <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+                            <span
+                                style="font-size: 2.5rem; font-weight: 700; color: #000; font-family: var(--font-display);">7%</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Educational Card -->
+                <div
+                    style="background: linear-gradient(135deg, #C19A4B 0%, #A67C3A 100%); border-radius: 16px; padding: 2.5rem; display: flex; align-items: center; gap: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                    <i class="fa-solid fa-book-open" style="font-size: 3rem; color: #000; opacity: 0.8;"></i>
+                    <div>
+                        <h3 style="font-size: 1rem; color: #000; margin: 0 0 0.5rem 0; font-weight: 600;">Educational
+                        </h3>
+                        <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+                            <span
+                                style="font-size: 2.5rem; font-weight: 700; color: #000; font-family: var(--font-display);">73</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Feedback Card -->
+                <div
+                    style="background: linear-gradient(135deg, #C19A4B 0%, #A67C3A 100%); border-radius: 16px; padding: 2.5rem; display: flex; align-items: center; gap: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.3);">
+                    <i class="fa-solid fa-comment-dots" style="font-size: 3rem; color: #000; opacity: 0.8;"></i>
+                    <div>
+                        <h3 style="font-size: 1rem; color: #000; margin: 0 0 0.5rem 0; font-weight: 600;">Feedback</h3>
+                        <div style="display: flex; align-items: baseline; gap: 0.5rem;">
+                            <span
+                                style="font-size: 2.5rem; font-weight: 700; color: #000; font-family: var(--font-display);">78</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+
+</html>

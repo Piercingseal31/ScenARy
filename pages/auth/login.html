@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScenARy - Institute Access</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+    <div class="auth-container">
+        <div class="auth-wrapper">
+            <!-- VIEW: LOGIN -->
+            <div id="view-login" class="auth-view glass-card active">
+                <div class="logo-area">
+                    <div class="logo-icon"><i class="fa-solid fa-landmark"></i></div>
+                    <h3>Institute Login</h3>
+                    <p>Your Way to Help See the History Anywhere</p>
+                </div>
+
+                <form onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <label>Organization Email</label>
+                        <input type="email" class="form-control" placeholder="name@institute.edu">
+                    </div>
+                    <div class="form-group">
+                        <label>Password</label>
+                        <input type="password" class="form-control" placeholder="••••••••">
+                    </div>
+
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" class="custom-checkbox"> Remember Me
+                        </label>
+                        <a id="btn-forgot-password" style="cursor: pointer;">Forgot Password?</a>
+                    </div>
+
+                    <button class="btn btn-primary btn-block">LOGIN</button>
+                </form>
+
+                <div class="auth-footer">
+                    Not registered yet? <a id="btn-to-register">Create for Institute</a>
+                </div>
+            </div>
+
+            <!-- VIEW: REGISTER STEP 1 (Credentials) -->
+            <div id="view-register-1" class="auth-view glass-card">
+                <div class="logo-area">
+                    <div class="logo-icon"><i class="fa-solid fa-landmark"></i></div>
+                    <h3>It Only Takes Two Steps</h3>
+                </div>
+
+                <div class="steps-indicator">
+                    <div class="step active">1</div>
+                    <div class="step-line"></div>
+                    <div class="step">2</div>
+                </div>
+
+                <div class="form-section-title">Credentials</div>
+
+                <form onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <label>Site Name</label>
+                        <input type="text" class="form-control" placeholder="e.g. Fort San Pedro">
+                    </div>
+                    <div class="form-group">
+                        <label>Organization Email</label>
+                        <input type="email" class="form-control" placeholder="name@institute.edu">
+                    </div>
+
+                    <div class="form-actions">
+                        <button id="btn-next-step" class="btn btn-primary btn-block">NEXT</button>
+                    </div>
+
+                    <div class="auth-footer">
+                        Already have an account? <a id="btn-to-login">Login</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- VIEW: REGISTER STEP 2 (Purpose & Submit) -->
+            <div id="view-register-2" class="auth-view glass-card">
+                <i class="fa-solid fa-arrow-left btn-back" id="btn-back-step"></i>
+
+                <div class="logo-area">
+                    <div class="logo-icon"><i class="fa-solid fa-landmark"></i></div>
+                    <h3>It Only Takes Two Steps</h3>
+                </div>
+
+                <div class="steps-indicator">
+                    <div class="step active"><i class="fa-solid fa-check"></i></div>
+                    <div class="step-line"></div>
+                    <div class="step active">2</div>
+                </div>
+
+                <div class="form-section-title">Purpose & Submit</div>
+
+                <form onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <label>Purpose</label>
+                        <textarea class="form-control" rows="4"
+                            placeholder="Describe the purpose of this historical site model..."></textarea>
+                        <div
+                            style="text-align: right; font-size: 0.7rem; color: var(--color-text-muted); margin-top: 0.5rem;">
+                            0/200</div>
+                    </div>
+
+                    <div class="form-actions">
+                        <button class="btn btn-primary btn-block">SUBMIT</button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- VIEW: FORGOT PASSWORD -->
+            <div id="view-forgot-password" class="auth-view glass-card">
+                <i class="fa-solid fa-arrow-left btn-back" id="btn-back-to-login"></i>
+
+                <div class="logo-area">
+                    <div class="logo-icon"><i class="fa-solid fa-landmark"></i></div>
+                    <h3>Forgot Password?</h3>
+                    <p>A code will be sent to the email to help reset password</p>
+                </div>
+
+                <form onsubmit="event.preventDefault();">
+                    <div class="form-group">
+                        <label>Organization Email</label>
+                        <input type="email" class="form-control" placeholder="name@institute.edu">
+                    </div>
+
+                    <button class="btn btn-primary btn-block" style="margin-top: 1rem;">RESET PASSWORD</button>
+                </form>
+
+                <div class="auth-footer">
+                    <a id="btn-back-login-link">Back to login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../../assets/js/auth.js"></script>
+</body>
+
+</html>
